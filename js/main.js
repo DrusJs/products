@@ -30,7 +30,8 @@ let timerClose
 document.querySelectorAll('.open-window').forEach(el=>{
     el.addEventListener('click', function() {
         clearTimeout(timerClose)
-        document.getElementById('second-modal').classList.remove('hide')
+        setTimeout(()=>{document.getElementById('second-modal').classList.remove('hide')}, 50)
+        updateModal(el.dataset.number)
         timerClose = setTimeout(()=>{document.getElementById('second-modal').classList.add('hide')}, 10000)
     })
 })
@@ -49,4 +50,16 @@ function resetPage() {
     document.querySelector('.cow').classList.remove('hide')
     document.querySelector('.container-main').classList.add('hide')    
     document.getElementById('first-modal').classList.add('hide')
+}
+
+
+let icon = document.querySelector('#second-modal .icon')
+let title = document.querySelector('#second-modal .title')
+let inner = document.querySelector('#second-modal .inner')
+
+function updateModal(num) {
+    console.log(icon, icon)
+    icon.src = `images/round-icon${num}.svg`
+    title.src = `images/modal/t${num}.svg`
+    inner.src = `images/modal/bl${num}.svg`
 }
