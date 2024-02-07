@@ -40,3 +40,13 @@ document.querySelectorAll('.close-modal').forEach(el=>{
         this.closest('.modal').classList.add('hide')
     })
 })
+
+function resetPage() {
+    let elem = document.querySelector('.container-percent .question-circle')
+    elem.previousElementSibling.classList.add('disable')
+    elem.classList.remove('disable')
+    document.querySelector('.container-percent').classList.remove('hide')
+    document.querySelector('.cow').classList.remove('hide')
+    document.querySelector('.container-main').classList.add('hide')    
+    document.getElementById('first-modal').classList.add('hide')
+}

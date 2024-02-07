@@ -66,9 +66,8 @@
     user-select: none;
     transition: 300ms;
 }
-.container-percent.hide {
-    position: absolute;
-    transform: translateX(100%);
+.container-percent.hide.absolute {
+
 }
 .container-percent .left {
     width: 50%;
@@ -77,6 +76,7 @@
     padding: 100px;
     color: #FFF;
     background-color: #B8D5ED;
+    transition: 300ms;
 }
 .container-percent .right {
     width: 50%;
@@ -87,6 +87,15 @@
     padding: 100px;
     padding-right: 0;
     position: relative;
+    transition: 300ms;
+}
+.container-percent.hide .left {
+    transform: translateX(-100%);
+
+}
+.container-percent.hide .right {
+    transform: translateX(100%);
+
 }
 .container-percent .large-percent {
     font-size: 20vw;
