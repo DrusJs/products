@@ -306,11 +306,17 @@
 
 }
 
-#first-modal.firstpage {
+.first-page {
     background-image: url(../images/modal/modal-first.svg);
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 400ms ease-in-out;
 
 }
-#first-modal {
+.first-modal {
     background-image: url(../images/modal/modal-first2.svg);
     background-position: center center;
     background-size: contain;
@@ -319,6 +325,6 @@
     cursor: pointer;
     transition: 400ms ease-in-out;
 }
-#first-modal.hide {
+.first-modal.hide, .first-page.hide {
     opacity: 0;
 }

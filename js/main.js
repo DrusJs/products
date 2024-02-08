@@ -22,13 +22,17 @@ document.querySelector('.question').addEventListener('click', function() {
 })
 
 document.querySelector('#first-modal').addEventListener('click', function() {
-    if (this.classList.contains('firstpage')) {
-        this.classList.remove('firstpage')
-    } else {
-        this.classList.add('hide')
-        showAllButtons()
-        inactivityTime()
-    }
+    this.classList.add('hide')
+    setTimeout(()=>{
+        document.querySelector('#first-page').classList.remove('hide')
+    }, 300)
+    
+})
+document.querySelector('#first-page').addEventListener('click', function() {
+    this.classList.add('hide')
+    showAllButtons()
+    inactivityTime()
+
 })
 
 let buttonsDelay = 200
@@ -74,7 +78,8 @@ function resetPage() {
     document.querySelector('.container-main').classList.add('hide')  
     document.querySelector('.container-main').classList.remove('bg')   
     document.querySelector('.container-main').classList.add('zoom')     
-    document.getElementById('first-modal').classList.add('hide')
+    document.querySelector('first-modal').classList.add('hide')   
+    document.querySelector('first-page').classList.add('hide')
     document.querySelector('.question').classList.remove('hide')
     document.getElementById('first-modal').classList.add('firstpage')
     document.querySelectorAll('.open-window').forEach(el=>{
