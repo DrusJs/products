@@ -41,6 +41,9 @@
     position: relative;
     transition: transform 2s ease-in-out;
 }
+.container-main .abs {
+    position: absolute;
+}
 .container-main.bg {
     background-image: url(../images/main-bg-normal.svg);
 }
@@ -70,6 +73,7 @@
 }
 .question.hide {
     opacity: 0;
+    pointer-events: none;
 }
 
 .main-zoom-text {
@@ -210,6 +214,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 .modal.nobg {
     background-color: transparent;

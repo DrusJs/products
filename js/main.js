@@ -1,12 +1,14 @@
 document.querySelector('.container-percent .question-circle').addEventListener('click', function() {
     this.previousElementSibling.classList.remove('disable')
     this.classList.add('disable')
+    document.querySelector('.question').classList.remove('hide')
     setTimeout(()=>{
         document.querySelector('.container-percent').classList.add('hide')
         document.querySelector('.container-main').classList.remove('hide')
     }, 2000)
     setTimeout(()=>{
         document.querySelector('.main-zoom-text').classList.remove('hide')
+        inactivityTime()
     }, 2500)
 })
 
@@ -31,8 +33,6 @@ document.querySelector('#first-modal').addEventListener('click', function() {
 document.querySelector('#first-page').addEventListener('click', function() {
     this.classList.add('hide')
     showAllButtons()
-    inactivityTime()
-
 })
 
 let buttonsDelay = 200
@@ -78,10 +78,9 @@ function resetPage() {
     document.querySelector('.container-main').classList.add('hide')  
     document.querySelector('.container-main').classList.remove('bg')   
     document.querySelector('.container-main').classList.add('zoom')     
-    document.querySelector('first-modal').classList.add('hide')   
-    document.querySelector('first-page').classList.add('hide')
+    document.querySelector('#first-modal').classList.add('hide')   
+    document.querySelector('#first-page').classList.add('hide')
     document.querySelector('.question').classList.remove('hide')
-    document.getElementById('first-modal').classList.add('firstpage')
     document.querySelectorAll('.open-window').forEach(el=>{
         el.classList.remove('show')
         el.classList.remove('anim')
@@ -95,7 +94,6 @@ let title = document.querySelector('#second-modal .title')
 let inner = document.querySelector('#second-modal .inner')
 
 function updateModal(num) {
-    console.log(icon, icon)
     icon.src = `images/round-icon${num}.svg`
     title.src = `images/modal/t${num}.svg`
     inner.src = `images/modal/bl${num}.svg`
@@ -104,7 +102,7 @@ function updateModal(num) {
 let activeTimer = false
 
 function inactivityTime(set=true) {
-    let time
+    let time = setTimeout(fn, 60000)
     if (set) {
         document.addEventListener('mousemove', resetTimer)
         document.addEventListener('keypress', resetTimer)
@@ -119,7 +117,7 @@ function inactivityTime(set=true) {
   
     function resetTimer() {
       clearTimeout(time);
-      time = setTimeout(fn, 15000)
+      time = setTimeout(fn, 60000)
     }
   
     function fn() {
