@@ -19,18 +19,18 @@ document.querySelector('.question').addEventListener('click', function() {
     document.querySelector('.main-zoom-text').classList.add('hide')
     document.querySelector('.container-main').classList.remove('zoom')
     setTimeout(()=>{
-        document.getElementById('first-modal').classList.remove('hide')
+        document.getElementById('first-page').classList.remove('hide')
     }, 2000)
 })
 
-document.querySelector('#first-modal').addEventListener('click', function() {
+document.querySelector('#first-page').addEventListener('click', function() {
     this.classList.add('hide')
     setTimeout(()=>{
-        document.querySelector('#first-page').classList.remove('hide')
+        document.querySelector('#first-modal').classList.remove('hide')
     }, 300)
     
 })
-document.querySelector('#first-page').addEventListener('click', function() {
+document.querySelector('#first-modal').addEventListener('click', function() {
     this.classList.add('hide')
     showAllButtons()
 })
@@ -85,6 +85,8 @@ function resetPage() {
         el.classList.remove('show')
         el.classList.remove('anim')
     })
+    buttonsDelay = 200
+    buttonsDelayStep = 200
 }
 
 
