@@ -99,6 +99,11 @@ function updateModal(num) {
     icon.src = `images/round-icon${num}.svg`
     title.src = `images/modal/t${num}.svg`
     inner.src = `images/modal/bl${num}.svg`
+    if (+num == 3) {
+        title.classList.add('small')
+    } else {
+        title.classList.remove('small')
+    }
 }
 
 let activeTimer = false

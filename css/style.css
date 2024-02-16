@@ -236,6 +236,9 @@
     height: 120px;
 }
 .modal .head .title {
+    height: 55px;
+}
+.modal .head .title.small {
     height: 45px;
 }
 .flex-grow {

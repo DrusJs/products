@@ -35,7 +35,8 @@
       }
 
       .cls-6 {
-        fill: #e2ddc7;
+        fill: #000;
+        opacity: .2;
       }
 
       .cls-8 {
