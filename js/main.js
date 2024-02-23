@@ -42,6 +42,7 @@ function showAllButtons() {
         setTimeout(()=>{el.classList.add('show')}, buttonsDelay)
         buttonsDelay = +buttonsDelay + +buttonsDelayStep
     })
+    document.querySelector('.back-button').classList.remove('hide')
     buttonsDelay = 200
     buttonsDelayStep = 200
     setTimeout(()=>{
@@ -85,9 +86,15 @@ function resetPage() {
         el.classList.remove('show')
         el.classList.remove('anim')
     })
+    document.querySelector('.back-button').classList.add('hide')
     buttonsDelay = 200
     buttonsDelayStep = 200
 }
+
+document.querySelector('.back-button').addEventListener('click', ()=>{
+    activeTimer = false
+    resetPage()
+})
 
 
 

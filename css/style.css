@@ -336,3 +336,15 @@
 .first-modal.hide, .first-page.hide {
     opacity: 0;
 }
+.back-button {
+    width: 123px;
+    height: 120px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: 260ms ease-in-out;
+}
+.back-button.hide {
+    opacity: 0;
+}
